@@ -17,7 +17,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, onViewChange }) => {
   return (
     <div className="sidebar">
       <div className="sidebar-header">
-        <h2 className="sidebar-title">BPPV</h2>
+        <img src="/audiosight-logo.jpg" alt="AudioSight" className="sidebar-logo" />
       </div>
       
       <nav className="sidebar-nav">
