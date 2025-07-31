@@ -1,0 +1,239 @@
+/* Latest Appointments Widget */
+.appointments-widget {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+/* Widget Header */
+.widget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px 16px 24px;
+  border-bottom: none;
+}
+
+.widget-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+  color: #2c3e50;
+}
+
+.expand-btn {
+  background: none;
+  border: none;
+  color: #6c757d;
+  padding: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.expand-btn:hover {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+
+/* Appointments Content */
+.appointments-content {
+  width: 100%;
+}
+
+/* Appointments Header */
+.appointments-header {
+  display: grid;
+  grid-template-columns: 100px 520px 1fr 120px;
+  gap: 30px;
+  padding: 16px 24px;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
+  align-items: center;
+}
+
+.header-time,
+.header-date,
+.header-patient,
+.header-doctor {
+  font-weight: 600;
+  color: #495057;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sort-icon {
+  font-size: 16px;
+  color: #6c757d;
+  opacity: 0.7;
+}
+
+.header-time {
+  justify-content: center;
+}
+
+.header-date {
+  justify-content: center;
+}
+
+.header-patient {
+  justify-content: flex-start;
+}
+
+.header-doctor {
+  justify-content: center;
+}
+
+/* Appointments Body */
+.appointments-body {
+  width: 100%;
+}
+
+.appointment-row {
+  display: grid;
+  grid-template-columns: 100px 520px 1fr 120px;
+  gap: 30px;
+  padding: 16px 24px;
+  border-bottom: 1px solid #f1f3f4;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.appointment-row:hover {
+  background-color: #f8f9fa;
+}
+
+.appointment-row:last-child {
+  border-bottom: none;
+}
+
+/* Time Column */
+.appointment-time {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Date Column */
+.appointment-date {
+  font-weight: 400;
+  color: #6c757d;
+  font-size: 14px;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Patient Column */
+.appointment-patient {
+  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.patient-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-initials {
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.patient-name {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Doctor Column */
+.appointment-doctor {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .appointments-header,
+  .appointment-row {
+    grid-template-columns: 80px 140px 1fr 100px;
+    gap: 20px;
+    padding: 14px 20px;
+  }
+  
+  .widget-header {
+    padding: 18px 20px 14px 20px;
+  }
+  
+  .patient-name {
+    font-size: 13px;
+  }
+  
+  .appointment-time,
+  .appointment-date,
+  .appointment-doctor {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointments-header,
+  .appointment-row {
+    grid-template-columns: 70px 110px 1fr 90px;
+    gap: 16px;
+    padding: 12px 16px;
+  }
+  
+  .patient-avatar {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .avatar-initials {
+    font-size: 10px;
+  }
+  
+  .widget-header {
+    padding: 16px 16px 12px 16px;
+  }
+}

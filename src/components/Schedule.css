@@ -1,0 +1,646 @@
+.schedule-container {
+  flex: 1;
+  padding: 24px;
+  background-color: #f0f4f8;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.big-calendar-wrapper {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  height: calc(100vh - 48px);
+}
+
+.schedule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.schedule-title-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.schedule-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  color: #6c757d;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+
+.view-toggle {
+  display: flex;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 4px;
+  gap: 4px;
+}
+
+.toggle-btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  color: #6c757d;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle-btn.active {
+  background-color: white;
+  color: #2c3e50;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-btn:hover:not(.active) {
+  color: #495057;
+}
+
+/* React Big Calendar Custom Styles */
+
+/* Override react-big-calendar default styles */
+.rbc-calendar {
+  font-family: inherit;
+  height: 100% !important;
+}
+
+/* Header styles */
+.rbc-header {
+  background-color: #f8f9fa !important;
+  border-bottom: 2px solid #e9ecef !important;
+  padding: 12px 8px !important;
+  font-weight: 600 !important;
+  color: #6c757d !important;
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Month view styles */
+.rbc-month-view {
+  border: 1px solid #e9ecef !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.rbc-date-cell {
+  padding: 8px !important;
+}
+
+.rbc-date-cell > a {
+  color: #2c3e50 !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+}
+
+.rbc-off-range-bg {
+  background-color: #fafafa !important;
+}
+
+.rbc-off-range .rbc-date-cell > a {
+  color: #bdc3c7 !important;
+}
+
+.rbc-today {
+  background-color: #e3f2fd !important;
+}
+
+.rbc-today .rbc-date-cell > a {
+  background-color: #2196f3 !important;
+  color: white !important;
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 600 !important;
+}
+
+/* Week and Day view styles */
+.rbc-time-view {
+  border: 1px solid #e9ecef !important;
+  border-radius: 8px !important;
+  overflow: hidden !important;
+}
+
+.rbc-time-header {
+  border-bottom: 2px solid #e9ecef !important;
+}
+
+.rbc-time-content {
+  border-top: none !important;
+}
+
+.rbc-time-gutter {
+  background-color: #fafafa !important;
+  border-right: 2px solid #e9ecef !important;
+}
+
+.rbc-timeslot-group {
+  border-bottom: 1px solid #f1f3f4 !important;
+}
+
+.rbc-time-slot {
+  border-top: 1px solid #f8f9fa !important;
+}
+
+.rbc-label {
+  color: #6c757d !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+}
+
+.rbc-current-time-indicator {
+  background-color: #2196f3 !important;
+  height: 2px !important;
+}
+
+/* Day header styles for week/day views */
+.rbc-header + .rbc-header {
+  border-left: 1px solid #e9ecef !important;
+}
+
+/* Event styles */
+.rbc-event {
+  border: none !important;
+  border-radius: 6px !important;
+  padding: 4px 8px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12) !important;
+}
+
+.rbc-event:focus {
+  outline: 2px solid #2196f3 !important;
+  outline-offset: 2px !important;
+}
+
+.rbc-event.rbc-selected {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Popup styles */
+.rbc-overlay {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid #e9ecef !important;
+}
+
+.rbc-overlay-header {
+  background-color: #f8f9fa !important;
+  border-bottom: 1px solid #e9ecef !important;
+  padding: 12px 16px !important;
+  font-weight: 600 !important;
+  color: #2c3e50 !important;
+}
+
+/* Show more link */
+.rbc-show-more {
+  color: #2196f3 !important;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+}
+
+.rbc-show-more:hover {
+  color: #1976d2 !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .schedule-container {
+    padding: 16px;
+  }
+  
+  .big-calendar-wrapper {
+    padding: 16px;
+  }
+  
+  .schedule-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+  
+  .schedule-title-section {
+    justify-content: center;
+  }
+  
+  .view-toggle {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .schedule-container {
+    padding: 12px;
+  }
+  
+  .big-calendar-wrapper {
+    padding: 12px;
+  }
+  
+  .schedule-title {
+    font-size: 20px;
+  }
+  
+  .rbc-header {
+    padding: 8px 4px !important;
+    font-size: 10px !important;
+  }
+  
+  .rbc-date-cell > a {
+    font-size: 12px !important;
+  }
+  
+  .rbc-event {
+    font-size: 11px !important;
+    padding: 2px 6px !important;
+  }
+  
+  .rbc-label {
+    font-size: 10px !important;
+  }
+}
+
+/* Schedule Legend */
+.schedule-legend {
+  margin-top: 20px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+.schedule-legend h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.legend-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: #495057;
+}
+
+.legend-color {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.legend-color.bppv-check {
+  background-color: #e91e63;
+}
+
+.legend-color.hearing-test {
+  background-color: #ff9500;
+}
+
+.legend-color.consultation {
+  background-color: #4caf50;
+}
+
+.legend-color.follow-up {
+  background-color: #9c27b0;
+}
+
+.legend-color.break {
+  background-color: #607d8b;
+}
+
+/* Appointment Details Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.appointment-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 16px;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.modal-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.appointment-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #f8f9fa;
+  border-radius: 50%;
+  color: #495057;
+}
+
+.modal-title h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-close-btn:hover {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+}
+
+.modal-content {
+  padding: 24px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.appointment-info {
+  margin-bottom: 24px;
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #495057;
+  min-width: 140px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-label svg {
+  color: #6c757d;
+  flex-shrink: 0;
+}
+
+.info-value {
+  flex: 1;
+  color: #2c3e50;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.time-range {
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 16px;
+}
+
+.appointment-type-badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: white;
+}
+
+.appointment-type-badge.bppv-check {
+  background-color: #e91e63;
+}
+
+.appointment-type-badge.hearing-test {
+  background-color: #ff9500;
+}
+
+.appointment-type-badge.consultation {
+  background-color: #4caf50;
+}
+
+.appointment-type-badge.follow-up {
+  background-color: #9c27b0;
+}
+
+.appointment-type-badge.break {
+  background-color: #607d8b;
+}
+
+.notes-value {
+  background-color: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 4px solid #2196f3;
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #e9ecef;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-primary {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #1976d2;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: #f8f9fa;
+  color: #6c757d;
+  border: 1px solid #e9ecef;
+}
+
+.btn-secondary:hover {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+/* Mobile modal adjustments */
+@media (max-width: 768px) {
+  .modal-overlay {
+    padding: 16px;
+  }
+  
+  .appointment-modal {
+    border-radius: 12px;
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    padding: 20px 20px 16px;
+  }
+  
+  .modal-title h3 {
+    font-size: 18px;
+  }
+  
+  .appointment-icon {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .appointment-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .modal-content {
+    padding: 20px;
+  }
+  
+  .info-row {
+    flex-direction: column;
+    margin-bottom: 16px;
+  }
+  
+  .info-label {
+    min-width: auto;
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+  
+  .info-value {
+    font-size: 13px;
+  }
+  
+  .modal-actions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+  
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+/* Mobile legend adjustments */
+@media (max-width: 768px) {
+  .schedule-legend {
+    margin-top: 16px;
+    padding: 12px;
+  }
+  
+  .legend-items {
+    gap: 12px;
+  }
+  
+  .legend-item {
+    font-size: 12px;
+    gap: 6px;
+  }
+  
+  .legend-color {
+    width: 14px;
+    height: 14px;
+  }
+}
