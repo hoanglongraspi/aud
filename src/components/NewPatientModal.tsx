@@ -19,12 +19,12 @@ const NewPatientModal: React.FC<NewPatientModalProps> = ({ isOpen, onClose, onSu
     email: ''
   });
 
-  const [errors, setErrors] = useState<Partial<PatientFormData>>({});
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
 
   const bloodGroups = ['A+ve', 'A-ve', 'B+ve', 'B-ve', 'AB+ve', 'AB-ve', 'O+ve', 'O-ve'];
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<PatientFormData> = {};
+    const newErrors: {[key: string]: string} = {};
 
     if (!formData.name.trim()) {
       newErrors.name = 'Patient name is required';
@@ -78,10 +78,11 @@ const NewPatientModal: React.FC<NewPatientModalProps> = ({ isOpen, onClose, onSu
     
     // Clear error when user starts typing
     if (errors[field]) {
-      setErrors(prev => ({
-        ...prev,
-        [field]: undefined
-      }));
+      setErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
     }
   };
 

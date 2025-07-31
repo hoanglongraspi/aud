@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { MdSearch, MdFilterList, MdAdd, MdDelete, MdInfo, MdNavigateNext, MdNavigateBefore } from 'react-icons/md';
+import { MdSearch, MdFilterList, MdAdd, MdDelete, MdInfo } from 'react-icons/md';
 import type { Patient, PatientFormData } from '../types/patient';
 import NewPatientModal from './NewPatientModal';
 import PatientInfo from './PatientInfo';
